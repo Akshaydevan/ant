@@ -1,5 +1,5 @@
 # Ant
-  Ant is simple commmand line text editor.
+  Ant is simple and basic commmand line text editor.
   
   Shortcut keys:
     
