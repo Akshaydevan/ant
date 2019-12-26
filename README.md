@@ -2,7 +2,7 @@
 Ant is a basic terminal based text editor.
   
   
-##Installation
+## Installation
 Clone the project
 
     $ git clone https://github.com/Akshaydevan/ant.git
@@ -13,11 +13,11 @@ Build
     $ ./build.sh
     $ ant
 
-##Shortcutkeys
+## Shortcutkeys
 - **Open**:
 ```Press CTRL-O```
 - **Save**:
 ```Press CTRL-S```
 - **Exit**:```Press Esc```
-##License
+## License
 This project is licensed under GPLv3 license 
