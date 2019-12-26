@@ -38,7 +38,7 @@ void exitkey(){
 }
 
 int getkey(){
-    char a = -1,key;
+    char a = -1,b,key;
     
     while (a == -1){
         input_block_off;
@@ -53,10 +53,11 @@ int getkey(){
     
     if(a>=32 && a<=126){
         input_block_off;
-        if(getchar() != -1){
+        if((b = getchar()) != -1){
+            ungetc(b,stdin);
             ungetc(a,stdin);
             input_block_on;
-            return ClipBoard;
+            return CLIPBOARD;
         }else{
             input_block_on;
             return a;

@@ -1,9 +1,23 @@
 # Ant
-  Ant is simple and basic commmand line text editor.
+Ant is a basic terminal based text editor.
   
-  Shortcut keys:
-    
-    
-    Press CTRL+S and enter file_name to save current file.
-    Press CTRL+O and enter file_name to open a file.
-    Press Esc to quit.
+  
+##Installation
+Clone the project
+
+    $ git clone https://github.com/Akshaydevan/ant.git
+    $ cd ant
+   
+Build
+
+    $ ./build.sh
+    $ ant
+
+##Shortcutkeys
+- **Open**:
+```Press CTRL-O```
+- **Save**:
+```Press CTRL-S```
+- **Exit**:```Press Esc```
+##License
+This project is licensed under GPLv3 license 

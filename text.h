@@ -46,6 +46,7 @@ void initkey(void);
 void exitkey(void);
 void getbuff(void);
 void resize(int);
+void setmsg(int);
 
 int file_size;
 int x,y;
@@ -66,6 +67,6 @@ int resized;
 #define SaveShortcut 19
 #define SpaceKey 32
 #define OpenShortcut 15
-#define ClipBoard 16
+#define CLIPBOARD 16
 
 #define halt while(getchar()!='q'){}

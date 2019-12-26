@@ -22,7 +22,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 void quit(void);
 void save(void);
-void file_open(void);
+int file_open(void);
 void handelkey(void);
 
 
@@ -52,14 +52,14 @@ void quit(){
 void save(){
     FILE *output;
     int i,j;
-    char nm[10];
+    char *name = malloc(sizeof(char) * 255);
     system("clear");
     printf("Enter file name:");
     exitkey();
-    scanf("%s",nm);
+    scanf("%s",name);
     initkey();
     getchar();
-    output = fopen(nm,"w+");
+    output = fopen(name,"w+");
     for(i=0;i<=file_size;i++){
         for(j=0;getmem(j,i)!='\0' && getmem(j,i)!=10;j++){
             fprintf(output,"%c",getmem(j,i));
@@ -67,23 +67,25 @@ void save(){
        fprintf(output,"%c",10);
     }
     fclose(output);
+    free(name);
 }
 
-void file_open(){
+int file_open(){
     FILE *input;
-    char name[10],key;
+    char *name,key;
+    name = malloc(sizeof(char) * 255);
     system("clear");
     x = 0;
     y = 0;
     printf("Enter file name:");
     exitkey();
-    scanf("%s",&name);
+    scanf("%s",name);
     initkey();
     getchar();
-    strcpy(file_name,name);
+    //strcpy(file_name,name);
     input = fopen(name,"r+");
     if(!input){
-        exit(0);
+        return -1;
     }
     while((key = fgetc(input))!=EOF){
       if(key >= 32 && key <= 126){
@@ -96,8 +98,10 @@ void file_open(){
       }
     }
     fclose(input);
+    free(name);
     x = 0;
     y = 0;
+    return 0;
 }
 
 void handelkey(){
@@ -122,9 +126,14 @@ void handelkey(){
                       
         case SaveShortcut:
                     save();
+                    setmsg(2);
                     break;
         case OpenShortcut:
-                    file_open();
+                    if(file_open() == -1){
+                        setmsg(1);
+                    }else{
+                        setmsg(0);
+                    }
                     break;
         
         case BackspaceKey:
@@ -180,7 +189,7 @@ void handelkey(){
                     }
                     break;
         
-        case ClipBoard:
+        case CLIPBOARD:
                     getbuff();
                     break;
                     

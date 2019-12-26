@@ -26,6 +26,7 @@ int curnt_line = 26;
 int char_start = 0;
 int char_end = 0;
 int curnt_char = 80;
+int msg = 0;
 struct winsize term;
 int resized = 0;
 void status_bar(int,int);
@@ -96,9 +97,24 @@ void status_bar(int x,int y){
     printf("Line %d,column %d",y+1,x+1);
     printf("%c[%d;%dH",27,term.ws_row,40);
     printf("%s",file_name);
+    if(msg == 1){
+        printf("%c[%d;%dH",27,term.ws_row,55);
+        printf("\e[k\e[48;2;255;0;0m");
+        printf("file not found");
+    }
+    if(msg == 2){
+        printf("%c[%d;%dH",27,term.ws_row,55);
+        printf("\e[k\e[48;2;0;255;0m");
+        printf("file saved");
+        msg = 0;
+    }
     printf("\e[0m");
 }
 
 void resize(int sig){
     resized = 1;
+}
+
+void setmsg(int i){
+    msg = i;
 }
