@@ -63,6 +63,7 @@ int resized;
 #define UpKey 129
 #define EscKey 127
 #define BackspaceKey 128
+#define TabKey 9
 #define EnterKey 13
 #define SaveShortcut 19
 #define SpaceKey 32

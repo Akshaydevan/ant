@@ -10,8 +10,7 @@ Clone the project
    
 Build
 
-    $ ./build.sh
-    $ ant
+    $ make
 
 ## Shortcutkeys
 - **Open**:
@@ -19,5 +18,6 @@ Build
 - **Save**:
 ```Press CTRL-S```
 - **Exit**:```Press Esc```
+
 ## License
 This project is licensed under GPLv3 license 

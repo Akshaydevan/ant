@@ -189,6 +189,17 @@ void handelkey(){
                     }
                     break;
         
+        case TabKey:
+                    if(getmem(x,y) == '\0'){
+                        setmem(' ',x++,y);
+                        setmem(' ',x++,y);
+                        setmem(' ',x++,y);
+                    }else{
+                        shiftmem(x,y,x+3,y);
+                        setmem(' ',x++,y);
+                        setmem(' ',x++,y);
+                        setmem(' ',x++,y);
+                    }
         case CLIPBOARD:
                     getbuff();
                     break;

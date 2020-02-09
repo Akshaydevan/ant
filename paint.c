@@ -61,7 +61,7 @@ void paint(int x,int y,int file_size){
         x = x-char_start;
         char_end = char_start + (term.ws_col-4);
     } else if(x>=char_start){
-        x = x-char_start;
+        x = (x-char_start);
         char_end = char_start + (term.ws_col-4);
     } else {
         char_start = x;

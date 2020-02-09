@@ -78,11 +78,12 @@ int getkey(){
     }
     else{
         switch(a){
-            case 13:return EnterKey;
-            case 19:return SaveShortcut;
-            case 15:return OpenShortcut;
+            case   9:return TabKey; 
+            case  13:return EnterKey;
+            case  19:return SaveShortcut;
+            case  15:return OpenShortcut;
             case 127:return BackspaceKey;
-            default:return -1;
+            default :return -1;
         }
     }
 }
